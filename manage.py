@@ -6,7 +6,7 @@ from flask_migrate import Migrate,MigrateCommand
 
 
 #Selection of the app state
-app = create_app('development')
+app = create_app('production')
 manager = Manager(app)
 
 #Migration set Commands

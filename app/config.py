@@ -5,6 +5,7 @@ class Config:
     
     #Secret Key configuration and Database location
     SECRET_KEY = 'dcadb4817ccfc31f2a0b'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://crabs:Greenland@localhost/pressly'
     
     
