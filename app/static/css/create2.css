@@ -1,0 +1,139 @@
+.create {
+    width: 100%;
+    width: 95%;
+    max-width: 400px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 .2rem .2rem hsl(219, 27%, 12%);
+    border-radius: .3rem;
+}
+
+.create form {
+    background-color: #1f2736;
+    border-radius: .5rem;
+    width: 90vw;
+    max-width: 450px;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+.create form h1 {
+    text-align: right;
+    cursor: pointer;
+    color: white;
+}
+
+.create form input {
+    padding: .5rem;
+    margin-block: .5rem;
+}
+
+.create form input,
+.create form textarea {
+    cursor: pointer;
+    width: 100%;
+    border-radius: .2rem;
+    border: 1px solid white;
+}
+
+.create form textarea {
+    padding: .5rem;
+    min-height: 5rem;
+    font-size: .8rem;
+}
+
+.create form input:focus,
+.create form textarea:focus {
+    outline: none;
+}
+
+.create-form-image {
+    text-align: center;
+}
+
+.create-form-image img {
+    height: 2rem;
+}
+
+.create-pic {
+    color: white;
+}
+
+.create-publish input {
+    background-color: #111827 !important;
+    border: 1px solid #111827 !important;
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.create-publish input:hover {
+    background-color: hsl(221, 39%, 8%) !important;
+    border: 1px solid hsl(221, 39%, 8%) !important;
+    transition: 0.3s ease-in-out;
+    animation: jello-horizontal 0.9s both;
+}
+
+@-webkit-keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
