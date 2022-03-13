@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+<title>Pressly - Register</title>
+{% endblock %} {% block content %}
+<section class="header">
+    <article class="header-login">
+        <div class="header-login-logo">
+            <img src="{{url_for('static',filename='images/pressly-logo.png')}}" alt="">
+        </div>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.name }}
+            </div>
+            <div>
+                {{ form.email }} {% if form.email.errors %}{% for error in form.email.errors %}
+                <p class="error">{{ error }}</p>
+                {% endfor %}{% endif %}
+            </div>
+            <div>
+                {{ form.password }}
+            </div>
+            <div>
+                {{ form.confirm_password }} {% if form.confirm_password.errors %} {% for error in form.confirm_password.errors %}
+                <p class="error">{{error}}</p>
+                {% endfor %} {% endif %}
+            </div>
+            <div class="header-login-form-submit">
+                {{ form.submit }}
+            </div>
+        </form>
+        <div class="header-login-signup">
+            <h1>Already have an account?<a href="{{ url_for('users.login') }}">Login</a></h1>
+        </div>
+    </article>
+</section>
+
+{% endblock %}

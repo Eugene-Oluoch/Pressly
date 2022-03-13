@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/profile.css') }}">
+<title>Pressly - Profile</title>
+{% endblock %} {% block content %}
+
+<section class="header-p">
+    <article class="header-profile">
+        <div class="header-profile-image">
+            <img src="{{ image }}" alt="" width='125px' height='125px'>
+        </div>
+        <div class="header-profile-desc">
+            <h1>{{ current_user.name }}</h1>
+            <p>{{ current_user.email }}</p>
+        </div>
+    </article>
+    <article class="header-about">
+        <div class="header-about-title">
+            <h1>Bio</h1>
+        </div>
+        <div class="header-about-desc">
+            <p>{{ current_user.bio }}</p>
+        </div>
+    </article>
+    <article class="header-update">
+        <div class="header-update-title">
+            <h1>Account Informantion</h1>
+        </div>
+        <form action="" method="post" enctype='multipart/form-data'>
+            {{ form.hidden_tag() }}
+            <div class="header-update-form-name">
+                {{ form.name }}
+            </div>
+            <div class="header-update-form-email">
+                {{ form.email }}
+            </div>
+            <div class="header-update-form-email">
+                {{ form.profile_pic }}
+            </div>
+            <div class="header-update-form-about">
+                {{ form.bio }}
+            </div>
+            <div class="header-update-form-submit">
+                {{ form.submit }}
+            </div>
+        </form>
+    </article>
+</section>
+{% endblock %}

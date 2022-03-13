@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/create.css') }}">
+<style>
+    .none {
+        display: none;
+    }
+</style>
+<title>Pressly - Home</title>
+{% endblock %} {% block content %}
+
+<section class="main">
+    <article class="main-container">
+        <article class="first">
+            <div>
+                <h1>“ {{ quote4.quote }} ”</h1>
+                <p>- {{ quote4.author }}</p>
+            </div>
+        </article>
+        <article class="second">
+            <div>
+                <h1>“ {{ quote5.quote }} ”</h1>
+                <p>- {{ quote5.author }}</p>
+            </div>
+        </article>
+        <article class="third">
+            <div>
+                <h1>“ {{ quote6.quote }} ”</h1>
+                <p>- {{ quote6.author }}</p>
+            </div>
+        </article>
+    </article>
+    <article class="quotes-title">
+        <h1>Daily Dose of Quotes</h1>
+    </article>
+    <article class="quote-container">
+        <article class="first-quote">
+            <p>“{{ quote1.quote }}”</p>
+            <h3>-<span><a href="{{ quote1.permalink }}" target="_blank">{{ quote1.author }}</a></span></h3>
+        </article>
+        <article class="second-quote">
+            <p>“{{ quote2.quote }}”</p>
+            <h3>-<span><a href="{{ quote2.permalink }}" target="_blank">{{ quote2.author }}</a></span></h3>
+        </article>
+        <article class="third-quote">
+            <p>“{{ quote3.quote }}”</p>
+            <h3>-<span><a href="{{ quote3.permalink }}" target="_blank">{{ quote3.author }}</a></span></h3>
+        </article>
+    </article>
+    <article class="stories-title">
+        <h1>All Stories</h1>
+    </article>
+    <article class="stories-container">
+        {% for post in posts %}
+        <article class="first-stories">
+            <div class="first-stories-image">
+                <img src="{{ url_for('static',filename='images/' + post.image_file) }}" alt="">
+            </div>
+            <h5 class="flex-those">{{ post.date_posted.strftime('%Y-%m-%d') }}</h5>
+            <div class="first-stories-desc">
+                <h1 class="link-to-post">{{ post.title }}</h1>
+                <p>{{ post.content }}</p>
+                <div class="flex-those">
+                    <p>By <span>{{ post.users.name }}</span></p>
+                    <a href="{{ url_for('main.post',post_id=post.id) }}" class='view'>View</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+</section>
+<script src="{{ url_for('static', filename='js/pop.js') }}"></script>
+<script src="{{ url_for('static', filename='js/yea.js') }}"></script>
+{% endblock %}

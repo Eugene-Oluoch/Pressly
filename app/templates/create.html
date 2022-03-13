@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block head %}
+<title>Pressly - Create</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/create.css') }}"> {% endblock %} {% block content %}
+<section class="header">
+    <section class="create" id='create'>
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="create-form-image">
+                <img src="{{ url_for('static',filename='images/pressly-logo.png') }}" alt="">
+            </div>
+            <div>
+                {{ form.title }}
+            </div>
+            <div>
+                {{ form.content }}
+            </div>
+            <div class="create-pic">
+                {{ form.picture }}
+            </div>
+            <div class="create-publish">
+                {{ form.submit }}
+            </div>
+        </form>
+    </section>
+</section>
+{% endblock %}

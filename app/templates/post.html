@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/create.css') }}">
+<style>
+    .none {
+        display: none;
+    }
+</style>
+<title>Pressly - Post</title>
+{% endblock %} {% block content %}
+<section class="create none" id='create'>
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <h1 id="pop">&times;</h1>
+        <div class="create-form-image">
+            <img src="{{ url_for('static',filename='images/pressly-logo.png') }}" alt="">
+        </div>
+        <div>
+            {{ form.title }}
+        </div>
+        <div>
+            {{ form.content }}
+        </div>
+        <div class="create-publish">
+            {{ form.submit }}
+        </div>
+    </form>
+</section>
+<section class="header">
+    <article class="header-blog">
+        <div class="header-blog-image">
+            <img src="{{ url_for('static', filename='images/'+post.image_file) }}" alt="" height="500px">
+        </div>
+        <div class="header-blog-desc">
+            <h4>{{ post.date_posted.strftime('%Y-%m-%d') }}</h4>
+            <h1>{{ post.title }}</h1>
+            <h3>{{ post.content }}</h3>
+            <p>By <span>{{ post.users.name }}</span></p>
+        </div>
+    </article>
+    <div class="btns">
+        {% if current_user.id == post.users.id %}
+        <button id="btn">update</button>
+        <a href="{{ url_for('main.delete',post_id=post.id) }}" class="del">Delete</a> {% endif %}
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/trying.js') }}"></script>
+{% endblock %}

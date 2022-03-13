@@ -1,0 +1,34 @@
+.footer {
+    background-color: #1F2736;
+    height: 3.2rem;
+}
+
+.footer-container {
+    padding: 1rem 0;
+    width: 100vw;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.footer-container-created {
+    font-size: .7rem;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.footer-container-created img {
+    height: 1rem;
+    padding: 0 .2rem;
+}
+
+.footer-container span {
+    color: #0066FF;
+}
