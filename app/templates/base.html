@@ -18,9 +18,6 @@
                 <img src="{{ url_for('static',filename='images/pressly-logo.png') }}" alt="">
                 <ul class="nav-menu">
                     <li><a href="{{ url_for('main.home') }}">Home</a></li>
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Technology</a></li>
                     {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('users.profile') }}">Profile</a></li>
                     <li><a href="{{ url_for('main.create') }}">Create</a></li>
